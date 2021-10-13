@@ -11,9 +11,37 @@
       </p>
     </div>
 
-    <v-row>
+    <v-row justify="end">
+      <v-tooltip top>
+        <template #activator="{ on, attrs }">
+          <v-icon
+            color="success darken-2 mx-4"
+            v-bind="attrs"
+            v-on="on"
+            @click="displayGrid = true"
+          >
+            mdi-view-grid
+          </v-icon>
+        </template>
+        <span>Grid</span>
+      </v-tooltip>
+      <v-tooltip top>
+        <template #activator="{ on, attrs }">
+          <v-icon
+            color="success darken-2 mx-4"
+            v-bind="attrs"
+            v-on="on"
+            @click="displayGrid = false"
+          >
+            mdi-format-list-bulleted
+          </v-icon>
+        </template>
+        <span>List</span>
+      </v-tooltip>
+    </v-row>
+
+    <v-row v-if="displayGrid">
       <v-card
-        :loading="loading"
         class="mx-auto my-10 card"
         max-width="374"
         v-for="project in projectsToShow"
@@ -76,7 +104,7 @@
             </template>
             <span>Website</span>
           </v-tooltip>
-          <v-tooltip top v-if="project.github">
+          <v-tooltip top v-if="project.github != '-'">
             <template #activator="{ on, attrs }">
               <a class="mx-4" :href="project.github" target="_blank">
                 <v-icon
@@ -95,7 +123,17 @@
       </v-card>
     </v-row>
 
-    <v-row justify="end">
+    <v-row v-if="!displayGrid" class="flex-column ma-0">
+      <v-data-table
+        :headers="headers"
+        :items="projects"
+        class="elevation-1 my-12"
+        hide-default-footer
+      >
+      </v-data-table>
+    </v-row>
+
+    <v-row justify="end" v-if="displayGrid">
       <v-btn
         color="success darken-2"
         elevation="3"
@@ -122,7 +160,7 @@ export default {
           skills: ['nuxtjs', 'sass'],
           type: 'Front End Website',
           website: 'https://www.laurasibille.com/',
-          github: false,
+          github: "-",
           description: `
           This is the website I created for the UX-UI Designer Laura SIBILLE.
           `,
@@ -193,6 +231,19 @@ export default {
           thumbnail: require('@/static/img/portfolio/weather-app-feature.png'),
         },
       ],
+      headers: [
+        {
+          text: 'Name',
+          align: 'start',
+          sortable: false,
+          value: 'name',
+        },
+        { text: 'Type', value: 'type' },
+        { text: 'Description', value: 'description' },
+        { text: 'Website', value: 'website' },
+        { text: 'Github', value: 'github' },
+      ],
+      displayGrid: false,
       showMore: false,
       numbersProjects: 3,
     }
