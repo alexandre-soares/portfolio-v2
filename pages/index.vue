@@ -2,6 +2,7 @@
   <div class="home">
     <Hero />
     <About-me />
+    <Portfolio />
     <Testimonies />
     <Contact />
   </div>
@@ -11,12 +12,14 @@
 import AboutMe from '../components/AboutMe.vue'
 import Contact from '../components/Contact.vue'
 import Hero from '../components/Hero.vue'
+import Portfolio from '../components/Portfolio.vue'
 import Testimonies from '../components/Testimonies.vue'
 export default {
   name: 'Home',
   components: {
     Hero,
     AboutMe,
+    Portfolio,
     Testimonies,
     Contact,
   },

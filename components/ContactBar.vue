@@ -3,7 +3,7 @@
     <div class="contact-icons">
       <v-tooltip right>
         <template #activator="{ on, attrs }">
-          <v-icon color="primary" dark v-bind="attrs" v-on="on">
+          <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
             mdi-email
           </v-icon>
         </template>
@@ -12,7 +12,7 @@
       <v-tooltip right>
         <template #activator="{ on, attrs }">
           <a href="https://www.linkedin.com/in/alex-ds-soares/" target="_blank">
-            <v-icon color="primary" dark v-bind="attrs" v-on="on">
+            <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
               mdi-linkedin
             </v-icon>
           </a>
@@ -21,7 +21,7 @@
       </v-tooltip>
       <v-tooltip right>
         <template #activator="{ on, attrs }">
-          <v-icon color="primary" dark v-bind="attrs" v-on="on">
+          <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
             mdi-instagram
           </v-icon>
         </template>
@@ -30,7 +30,7 @@
       <v-tooltip right>
         <template #activator="{ on, attrs }">
           <a href="https://github.com/alexandre-soares" target="_blank">
-            <v-icon color="primary" dark v-bind="attrs" v-on="on">
+            <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
               mdi-github
             </v-icon>
           </a>

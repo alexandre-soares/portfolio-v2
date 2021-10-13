@@ -1,0 +1,216 @@
+<template>
+  <v-container class="portfolio">
+    <div>
+      <span class="comments"> /* Portfolio */ </span>
+      <h2>My awesome <span class="primary-color">Projects</span></h2>
+      <p class="subinfo mt-4">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vero
+        corrupti, impedit voluptas reprehenderit aliquam! Voluptas sequi magni
+        repellat ut ullam provident, libero explicabo inventore quo sed pariatur
+        dolorum! Sequi.
+      </p>
+    </div>
+
+    <v-row>
+      <v-card
+        :loading="loading"
+        class="mx-auto my-10 card"
+        max-width="374"
+        v-for="project in projectsToShow"
+        :key="project.id"
+        cols="4"
+      >
+        <template slot="progress">
+          <v-progress-linear
+            color="success darken-2"
+            height="10"
+            indeterminate
+          ></v-progress-linear>
+        </template>
+
+        <v-img height="190" :src="project.thumbnail"></v-img>
+
+        <v-card-title>{{ project.name }}</v-card-title>
+
+        <v-card-text>
+          <div class="my-1 text-subtitle-1">Type: {{ project.type }}</div>
+
+          <div>
+            {{ project.description }}
+          </div>
+        </v-card-text>
+
+        <v-divider class="mx-4"></v-divider>
+
+        <v-card-title>Used Technologies</v-card-title>
+
+        <v-card-text>
+          <v-chip-group
+            v-model="selection"
+            active-class="success darken-2 white--text"
+            column
+          >
+            <v-chip
+              class="text-uppercase"
+              v-for="(skill, index) in project.skills"
+              :key="index"
+            >
+              {{ skill }}</v-chip
+            >
+          </v-chip-group>
+        </v-card-text>
+
+        <v-card-actions class="d-flex justify-center">
+          <v-tooltip top>
+            <template #activator="{ on, attrs }">
+              <a class="mx-4" :href="project.website" target="_blank">
+                <v-icon
+                  color="success darken-2 mx-4"
+                  v-bind="attrs"
+                  v-on="on"
+                  large
+                >
+                  mdi-web
+                </v-icon>
+              </a>
+            </template>
+            <span>Website</span>
+          </v-tooltip>
+          <v-tooltip top v-if="project.github">
+            <template #activator="{ on, attrs }">
+              <a class="mx-4" :href="project.github" target="_blank">
+                <v-icon
+                  color="success darken-2 mx-4"
+                  v-bind="attrs"
+                  v-on="on"
+                  large
+                >
+                  mdi-github
+                </v-icon>
+              </a>
+            </template>
+            <span>Github</span>
+          </v-tooltip>
+        </v-card-actions>
+      </v-card>
+    </v-row>
+
+    <v-row justify="end">
+      <v-btn
+        color="success darken-2"
+        elevation="3"
+        x-large
+        v-if="!showMore"
+        @click=";(numbersProjects = 10), (showMore = true)"
+      >
+        <span>Show More</span>
+      </v-btn>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+import { v1 as uuidv4 } from 'uuid'
+export default {
+  name: 'Portfolio',
+  data() {
+    return {
+      projects: [
+        {
+          id: uuidv4(),
+          name: "Laura SIBILLE's Portfolio",
+          skills: ['nuxtjs', 'sass'],
+          type: 'Front End Website',
+          website: 'https://www.laurasibille.com/',
+          github: false,
+          description: `
+          This is the website I created for the UX-UI Designer Laura SIBILLE.
+          `,
+          thumbnail: require('@/static/img/portfolio/laura-sibille-feature.png'),
+        },
+        {
+          id: uuidv4(),
+          name: 'Invoice App',
+          skills: ['vuejs', 'vuex', 'firebase'],
+          type: 'Full Stack App',
+          description: `
+          An Invoice app with realtime update.
+          `,
+          website: 'https://vuejs-invoice-app.web.app/',
+          github: 'https://github.com/alexandre-soares/vuejs-invoice-app',
+          thumbnail: require('@/static/img/portfolio/invoice-app-feature.png'),
+        },
+        {
+          id: uuidv4(),
+          name: 'Netflix Movie Api',
+          skills: ['vuejs', 'axios'],
+          type: 'Front End App',
+          website: 'https://quirky-hugle-b33382.netlify.app',
+          github:
+            'https://github.com/alexandre-soares/netflix-movie-app-nuxtjs',
+          description: `
+          A Netflix visual connected with a movie api to display a list of movies.
+          `,
+          thumbnail: require('@/static/img/portfolio/netflix-feature.png'),
+        },
+        {
+          id: uuidv4(),
+          name: `Requiem's Blog`,
+          skills: ['vuejs', 'firebase', 'crud'],
+          type: 'Full Stack App',
+          website: 'https://joker-s-blog.web.app/',
+          github: 'https://github.com/alexandre-soares/joker-blog',
+          description: `
+          A blog where you can find some interesting articles about video games.
+          `,
+          thumbnail: require('@/static/img/portfolio/requiem-blog-featured-image.png'),
+        },
+        {
+          id: uuidv4(),
+          name: 'Music Player',
+          skills: ['vuejs'],
+          type: 'Front End App',
+          website: 'https://elastic-euler-fa1143.netlify.app',
+          github: 'https://github.com/alexandre-soares/vuejs-music-app',
+          description: `
+          A music player made with VueJS. Manipulation of audio files. (Desktop Only)
+          `,
+          thumbnail: require('@/static/img/portfolio/music-player-feature.png'),
+          carouselImages: [
+            require('@/static/img/portfolio/music-player-feature.png'),
+          ],
+        },
+        {
+          id: uuidv4(),
+          name: 'Weather App',
+          skills: ['vuejs', 'firebase', 'crud'],
+          type: 'Full Stack App',
+          description: `
+          An app where you can check the weather.
+          `,
+          website: 'https://vuejs-weather-app-7dab4.web.app/',
+          github: 'https://github.com/alexandre-soares/vuejs-weather-app',
+          thumbnail: require('@/static/img/portfolio/weather-app-feature.png'),
+        },
+      ],
+      showMore: false,
+      numbersProjects: 3,
+    }
+  },
+  computed: {
+    projectsToShow() {
+      return this.projects.slice(0, this.numbersProjects)
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.card {
+  & img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+</style>
