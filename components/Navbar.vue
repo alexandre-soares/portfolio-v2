@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar flat app>
+    <v-toolbar flat>
       <v-toolbar-title>Alexandre Soares</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn color="success darken-2" elevation="3" x-large>

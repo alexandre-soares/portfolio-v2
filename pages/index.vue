@@ -3,11 +3,13 @@
     <Hero />
     <About-me />
     <Testimonies />
+    <Contact />
   </div>
 </template>
 
 <script>
 import AboutMe from '../components/AboutMe.vue'
+import Contact from '../components/Contact.vue'
 import Hero from '../components/Hero.vue'
 import Testimonies from '../components/Testimonies.vue'
 export default {
@@ -16,6 +18,7 @@ export default {
     Hero,
     AboutMe,
     Testimonies,
+    Contact,
   },
 }
 </script>

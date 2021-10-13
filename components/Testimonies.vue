@@ -3,7 +3,7 @@
     <div class="testimonies">
       <div>
         <span class="comments"> /* Testimonies */ </span>
-        <h2>My awesome <span class="primary-color">Clients</span></h2>
+        <h2>They <span class="primary-color">worked</span> with me</h2>
         <p class="subinfo mt-4">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vero
           corrupti, impedit voluptas reprehenderit aliquam! Voluptas sequi magni

@@ -1,10 +1,8 @@
 <template>
-  <v-app>
+  <v-app app>
     <Navbar />
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
     <Contact-bar />
   </v-app>
