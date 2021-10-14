@@ -12,7 +12,7 @@
       <v-col cols="5" class="contact__informations">
         <div>
           <h3>Contact Information</h3>
-          <p>Fill up the form and I will contact you within 24 hours</p>
+          <p>Fill up the form and I will contact you within 24 hours.</p>
 
           <div>
             <v-row align="center">

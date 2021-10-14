@@ -1,12 +1,12 @@
 <template>
-  <v-container class="about">
+  <v-container class="about mb-8">
     <Headline
       :comment="'About Me'"
       :title="'My Awesome Services'"
       :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
     />
 
-    <v-row class="services-list">
+    <v-row class="my-4">
       <v-card
         class="mx-auto my-12 pa-3 card"
         min-width="300"
@@ -21,17 +21,17 @@
           <img
             :src="service.iconUrl"
             alt="icon"
-            class="icon"
+            class="d-block my-4 mx-auto"
             height="70"
             width="70"
           />
         </div>
         <div class="card__content">
-          <h4 class="text-h6">{{ service.name }}</h4>
+          <h4 class="text-h6 text-center my-4">{{ service.name }}</h4>
 
           <v-spacer></v-spacer>
 
-          <p class="text-body-2 card__description">
+          <p class="text-body-2 text-justify my-4">
             {{ service.description }}
           </p>
         </div>
@@ -137,7 +137,7 @@ export default {
         // Back End Skills
         {
           id: uuidv4(),
-          bottom: -100,
+          bottom: -50,
           left: 600,
           iconUrl: '/img/about-me/backend.png',
           name: 'Back End Skills',
@@ -207,44 +207,14 @@ export default {
 .about {
   position: relative;
   height: 100vh;
-  margin-bottom: 100px;
-}
-
-p {
-  margin: 10px 0 !important;
-}
-
-.services-list {
-  margin-top: 30px;
 }
 
 .card {
   position: absolute;
-  &__header {
-    & img {
-      object-fit: cover;
-    }
-  }
-
-  &__content {
-    & h4 {
-      text-align: center;
-      margin: 10px 0;
-    }
-  }
-
-  &__description {
-    text-align: justify;
-  }
 }
 
 .v-icon {
   cursor: pointer;
 }
 
-.icon {
-  display: block;
-  margin: 10px auto;
-  object-fit: cover;
-}
 </style>

@@ -2,7 +2,7 @@
   <v-container class="portfolio">
     <Headline
       :comment="'Portfolio'"
-      :title="'My Awesome Services'"
+      :title="'My Awesome Creations'"
       :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
     />
 
@@ -14,7 +14,7 @@
             v-bind="attrs"
             v-on="on"
             @click="displayGrid = true"
-            class="ma-4"
+            class="mx-4"
           >
             mdi-view-grid
           </v-icon>
@@ -39,20 +39,12 @@
 
     <v-row v-if="displayGrid">
       <v-card
-        class="mx-auto my-10 card"
+        class="mx-auto my-5 card"
         max-width="374"
         v-for="project in projectsToShow"
         :key="project.id"
         cols="4"
       >
-        <template slot="progress">
-          <v-progress-linear
-            color="success darken-2"
-            height="10"
-            indeterminate
-          ></v-progress-linear>
-        </template>
-
         <v-img height="190" :src="project.thumbnail"></v-img>
 
         <v-card-title>{{ project.name }}</v-card-title>
@@ -67,16 +59,18 @@
 
         <v-divider class="mx-4"></v-divider>
 
-        <v-card-title>Used Technologies</v-card-title>
+        <v-card-title class="text-subtitle-1 py-2"
+          >Used Technologies</v-card-title
+        >
 
-        <v-card-text>
+        <v-card-text class="pb-1">
           <v-chip-group
             v-model="selection"
             active-class="success darken-2 white--text"
             column
           >
             <v-chip
-              class="text-uppercase"
+              class="text-uppercase text-caption"
               v-for="(skill, index) in project.skills"
               :key="index"
             >
@@ -90,7 +84,7 @@
             <template #activator="{ on, attrs }">
               <a class="mx-4" :href="project.website" target="_blank">
                 <v-icon
-                  color="success darken-2 mx-4"
+                  color="grey lighten-1 mx-4"
                   v-bind="attrs"
                   v-on="on"
                   large
@@ -105,7 +99,7 @@
             <template #activator="{ on, attrs }">
               <a class="mx-4" :href="project.github" target="_blank">
                 <v-icon
-                  color="success darken-2 mx-4"
+                  color="grey lighten-1 mx-4"
                   v-bind="attrs"
                   v-on="on"
                   large
@@ -132,9 +126,8 @@
 
     <v-row justify="end" v-if="displayGrid">
       <v-btn
-        color="success darken-2"
+        color="success darken-2 ma-4"
         elevation="3"
-        x-large
         v-if="!showMore"
         @click=";(numbersProjects = 10), (showMore = true)"
       >
@@ -258,12 +251,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.card {
-  & img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
