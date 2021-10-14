@@ -10,10 +10,10 @@
 
 <script>
 import AboutMe from '../components/AboutMe.vue'
-import Contact from '../components/Contact.vue'
 import Hero from '../components/Hero.vue'
 import Portfolio from '../components/Portfolio.vue'
 import Testimonies from '../components/Testimonies.vue'
+import Contact from '../components/Contact.vue'
 export default {
   name: 'Home',
   components: {
@@ -21,7 +21,7 @@ export default {
     AboutMe,
     Portfolio,
     Testimonies,
-    Contact,
+    Contact
   },
 }
 </script>

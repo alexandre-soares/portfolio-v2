@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - portfolio-v2',
-    title: 'portfolio-v2',
+    titleTemplate: '%s',
+    title: 'Alexandre SOARES - Full Stack Developer',
     htmlAttrs: {
       lang: 'en',
     },
@@ -39,7 +39,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/_breakpoints.scss', '~/assets/_colors.scss'],
+    customVariables: ['~/assets/_colors.scss'],
     theme: {
       dark: false,
       themes: {
@@ -63,12 +63,15 @@ export default {
           docker: '#255099',
           graphql: '#DA33A1',
           jira: '#237CF2',
-          vscode: '#025FA1'
+          vscode: '#025FA1',
+          firebase: '#F2C228',
         },
       },
     },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['vee-validate'],
+  },
 }

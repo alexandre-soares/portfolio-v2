@@ -1,15 +1,10 @@
 <template>
   <v-container class="about">
-    <div>
-      <span class="comments"> /* About Me */ </span>
-      <h2>My awesome <span class="primary-color">Services</span></h2>
-      <p class="subinfo mt-4">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vero
-        corrupti, impedit voluptas reprehenderit aliquam! Voluptas sequi magni
-        repellat ut ullam provident, libero explicabo inventore quo sed pariatur
-        dolorum! Sequi.
-      </p>
-    </div>
+    <Headline
+      :comment="'About Me'"
+      :title="'My Awesome Services'"
+      :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
+    />
 
     <v-row class="services-list">
       <v-card
@@ -23,14 +18,20 @@
         :style="{ bottom: service.bottom + 'px', left: service.left + 'px' }"
       >
         <div class="card__header">
-          <img :src="service.iconUrl" alt="icon" class="icon" />
+          <img
+            :src="service.iconUrl"
+            alt="icon"
+            class="icon"
+            height="70"
+            width="70"
+          />
         </div>
         <div class="card__content">
-          <h4>{{ service.name }}</h4>
+          <h4 class="text-h6">{{ service.name }}</h4>
 
           <v-spacer></v-spacer>
 
-          <p class="card__description">
+          <p class="text-body-2 card__description">
             {{ service.description }}
           </p>
         </div>
@@ -48,7 +49,7 @@
             >
               <v-tooltip top>
                 <template #activator="{ on, attrs }">
-                  <v-icon :color="tool.color" v-bind="attrs" v-on="on" x-large>
+                  <v-icon :color="tool.color" v-bind="attrs" v-on="on" large>
                     {{ tool.iconName }}
                   </v-icon>
                 </template>
@@ -64,7 +65,9 @@
 
 <script>
 import { v1 as uuidv4 } from 'uuid'
+import Headline from './layout/Headline.vue'
 export default {
+  components: { Headline },
   name: 'AboutMe',
   data() {
     return {
@@ -73,9 +76,9 @@ export default {
         // Front End Skills
         {
           id: uuidv4(),
-          bottom: 100,
+          bottom: 50,
           left: 60,
-          iconUrl: '/img/ux.png',
+          iconUrl: '/img/about-me/ux.png',
           name: 'Frond End Skills',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
@@ -136,7 +139,7 @@ export default {
           id: uuidv4(),
           bottom: -100,
           left: 600,
-          iconUrl: '/img/backend.png',
+          iconUrl: '/img/about-me/backend.png',
           name: 'Back End Skills',
           toggleName: 'showBackSkills',
           description: `I'm a thing. But, like most politicians, he promised more than
@@ -149,6 +152,12 @@ export default {
               iconName: 'mdi-nodejs',
               color: 'nodejs',
             },
+            {
+              id: uuidv4(),
+              name: 'Firebase',
+              iconName: 'mdi-firebase',
+              color: 'firebase',
+            },
           ],
         },
         // Other - Personality
@@ -156,8 +165,8 @@ export default {
           id: uuidv4(),
           bottom: 300,
           left: 700,
-          iconUrl: '/img/ux.png',
-          name: 'Personality',
+          iconUrl: '/img/about-me/tool-box.png',
+          name: 'Tools',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
@@ -205,10 +214,6 @@ p {
   margin: 10px 0 !important;
 }
 
-.subinfo {
-  width: 50% !important;
-}
-
 .services-list {
   margin-top: 30px;
 }
@@ -223,7 +228,6 @@ p {
 
   &__content {
     & h4 {
-      font-size: 1.6rem;
       text-align: center;
       margin: 10px 0;
     }
@@ -231,10 +235,6 @@ p {
 
   &__description {
     text-align: justify;
-    font-size: 1.4rem;
-  }
-
-  &__footer {
   }
 }
 
@@ -245,8 +245,6 @@ p {
 .icon {
   display: block;
   margin: 10px auto;
-  height: 10rem;
-  width: 10rem;
   object-fit: cover;
 }
 </style>

@@ -1,24 +1,20 @@
 <template>
   <v-container class="portfolio">
-    <div>
-      <span class="comments"> /* Portfolio */ </span>
-      <h2>My awesome <span class="primary-color">Projects</span></h2>
-      <p class="subinfo mt-4">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vero
-        corrupti, impedit voluptas reprehenderit aliquam! Voluptas sequi magni
-        repellat ut ullam provident, libero explicabo inventore quo sed pariatur
-        dolorum! Sequi.
-      </p>
-    </div>
+    <Headline
+      :comment="'Portfolio'"
+      :title="'My Awesome Services'"
+      :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
+    />
 
     <v-row justify="end">
       <v-tooltip top>
         <template #activator="{ on, attrs }">
           <v-icon
-            color="success darken-2 mx-4"
+            color="success darken-2"
             v-bind="attrs"
             v-on="on"
             @click="displayGrid = true"
+            class="ma-4"
           >
             mdi-view-grid
           </v-icon>
@@ -28,7 +24,8 @@
       <v-tooltip top>
         <template #activator="{ on, attrs }">
           <v-icon
-            color="success darken-2 mx-4"
+            color="success darken-2"
+            class="ma-4"
             v-bind="attrs"
             v-on="on"
             @click="displayGrid = false"
@@ -149,8 +146,13 @@
 
 <script>
 import { v1 as uuidv4 } from 'uuid'
+import Headline from './layout/Headline.vue'
+
 export default {
   name: 'Portfolio',
+  components: {
+    Headline,
+  },
   data() {
     return {
       projects: [
@@ -160,7 +162,7 @@ export default {
           skills: ['nuxtjs', 'sass'],
           type: 'Front End Website',
           website: 'https://www.laurasibille.com/',
-          github: "-",
+          github: '-',
           description: `
           This is the website I created for the UX-UI Designer Laura SIBILLE.
           `,
@@ -172,7 +174,7 @@ export default {
           skills: ['vuejs', 'vuex', 'firebase'],
           type: 'Full Stack App',
           description: `
-          An Invoice app with realtime update.
+          An Invoice app with realtime update connected with Firebase.
           `,
           website: 'https://vuejs-invoice-app.web.app/',
           github: 'https://github.com/alexandre-soares/vuejs-invoice-app',
@@ -224,7 +226,7 @@ export default {
           skills: ['vuejs', 'firebase', 'crud'],
           type: 'Full Stack App',
           description: `
-          An app where you can check the weather.
+          An app where you can check the weather. The app is connected with Firebase.
           `,
           website: 'https://vuejs-weather-app-7dab4.web.app/',
           github: 'https://github.com/alexandre-soares/vuejs-weather-app',
@@ -243,7 +245,7 @@ export default {
         { text: 'Website', value: 'website' },
         { text: 'Github', value: 'github' },
       ],
-      displayGrid: false,
+      displayGrid: true,
       showMore: false,
       numbersProjects: 3,
     }

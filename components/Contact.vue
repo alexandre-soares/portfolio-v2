@@ -1,11 +1,11 @@
 <template>
   <div class="contact">
     <v-container>
-      <span class="comments"> /* Contact */ </span>
-      <h2>Contact <span class="primary-color">Me</span></h2>
-      <p class="subinfo mt-4">
-        Any questions? Want to plan a meeting? Just write me a message!
-      </p>
+      <Headline
+        :comment="'Contact'"
+        :title="'Contact Me'"
+        :description="'Any questions? Want to plan a meeting? Just write me a message!'"
+      />
     </v-container>
 
     <v-row no-gutters align="baseline">
@@ -149,7 +149,6 @@ import {
   min,
   regex,
 } from 'vee-validate/dist/rules'
-
 import {
   extend,
   ValidationObserver,
@@ -157,42 +156,38 @@ import {
   setInteractionMode,
 } from 'vee-validate'
 
-setInteractionMode('eager')
+import Headline from './layout/Headline.vue'
 
+setInteractionMode('eager')
 extend('digits', {
   ...digits,
   message: '{_field_} needs to be {length} digits. ({_value_})',
 })
-
 extend('required', {
   ...required,
   message: '{_field_} can not be empty',
 })
-
 extend('max', {
   ...max,
   message: '{_field_} may not be greater than {length} characters',
 })
-
 extend('min', {
   ...min,
   message: '{_field_} may not be less than {length} characters',
 })
-
 extend('regex', {
   ...regex,
   message: '{_field_} {_value_} needs to be only with numbers',
 })
-
 extend('email', {
   ...email,
   message: 'Email must be valid',
 })
-
 export default {
   components: {
     ValidationProvider,
     ValidationObserver,
+    Headline
   },
   data() {
     return {
@@ -208,13 +203,12 @@ export default {
     submit() {
       this.$refs.observer.validate()
       this.loadingButton = true
-
       emailjs
         .sendForm(
           'service_wjep9cc',
           'template_mnlhg61',
           this.$refs.form,
-          'user_Zi0oEySIEQtJvHwy02QhL',
+          'user_Zi0oEySIEQtJvHwy02QhL'
         )
         .then(
           (result) => {
@@ -249,28 +243,21 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
     & div {
       padding: 30px !important;
-
       & p {
         margin: 20px 0;
       }
-
       & span {
-        font-size: 1.5rem;
         margin-left: 20px;
       }
     }
   }
-
   &__form {
     padding: 2rem 3rem;
-
     & textarea {
       width: 100%;
       margin-top: 2rem;
-      font-size: 1.6rem;
       border-bottom: 1px solid $light-green;
       font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
       &:focus {
@@ -280,43 +267,8 @@ export default {
     }
   }
 }
-
 .contact-icons {
   display: flex;
   flex-direction: row;
-}
-
-.button .button__text {
-  color: #ffffff;
-  transition: all 0.2s;
-}
-.button--loading .button__text {
-  visibility: hidden;
-  opacity: 0;
-}
-.button--loading::after {
-  content: '';
-  z-index: 99;
-  background-color: #2fb454;
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border: 4px solid transparent;
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: button-loading-spinner 1s ease infinite;
-}
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
 }
 </style>
