@@ -171,16 +171,17 @@ export default {
         },
         {
           id: uuidv4(),
-          name: 'Invoice App',
-          skills: ['vuejs', 'vuex', 'firebase'],
+          name: `Requiem's Blog`,
+          skills: ['vuejs', 'firebase', 'crud'],
           type: 'Full Stack App',
+          website: 'https://joker-s-blog.web.app/',
+          github: 'https://github.com/alexandre-soares/joker-blog',
           description: `
-          An Invoice app with realtime update connected with Firebase.
+          A blog where you can find some interesting articles about video games.
           `,
-          website: 'https://vuejs-invoice-app.web.app/',
-          github: 'https://github.com/alexandre-soares/vuejs-invoice-app',
-          thumbnail: require('@/static/img/portfolio/invoice-app-feature.png'),
+          thumbnail: require('@/static/img/portfolio/requiem-blog-featured-image.png'),
         },
+
         {
           id: uuidv4(),
           name: 'Netflix Movie Api',
@@ -196,15 +197,15 @@ export default {
         },
         {
           id: uuidv4(),
-          name: `Requiem's Blog`,
-          skills: ['vuejs', 'firebase', 'crud'],
+          name: 'Invoice App',
+          skills: ['vuejs', 'vuex', 'firebase'],
           type: 'Full Stack App',
-          website: 'https://joker-s-blog.web.app/',
-          github: 'https://github.com/alexandre-soares/joker-blog',
           description: `
-          A blog where you can find some interesting articles about video games.
+          An Invoice app with realtime update connected with Firebase.
           `,
-          thumbnail: require('@/static/img/portfolio/requiem-blog-featured-image.png'),
+          website: 'https://vuejs-invoice-app.web.app/',
+          github: 'https://github.com/alexandre-soares/vuejs-invoice-app',
+          thumbnail: require('@/static/img/portfolio/invoice-app-feature.png'),
         },
         {
           id: uuidv4(),

@@ -41,8 +41,8 @@ export default {}
   }
 
   & img {
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     margin: 0 auto;
     text-align: center;
     display: block;

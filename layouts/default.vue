@@ -18,7 +18,6 @@ export default {
 
 <style lang="scss">
 html {
-  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
