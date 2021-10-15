@@ -8,7 +8,9 @@
       <v-chip color="success darken-2 font-weight-medium my-2" label outlined
         >Front End Frameworks</v-chip
       >
-      <v-chip color="success darken-2 font-weight-medium my-2" label outlined>CSS Preprocessors</v-chip>
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >CSS Preprocessors</v-chip
+      >
       <v-chip color="success darken-2 font-weight-medium my-2" label outlined
         >RESTful Services/APIs</v-chip
       >
@@ -21,7 +23,9 @@
       <v-chip color="success darken-2 font-weight-medium my-2" label outlined
         >Git/Version Control</v-chip
       >
-      <v-chip color="success darken-2 my-2" label outlined>Problem Solving</v-chip>
+      <v-chip color="success darken-2 my-2" label outlined
+        >Problem Solving</v-chip
+      >
     </v-row>
 
     <v-row>
@@ -139,10 +143,8 @@ export default {
         {
           id: uuidv4(),
           iconUrl: '/img/about-me/backend.png',
-          name: 'These are my main Front-End Skills.',
-          description: `I'm a thing. But, like most politicians, he promised more than
-                he could deliver. You won't have time for sleeping, soldier, not
-                with all the bed making you'll be doing.`,
+          name: 'Back End Technologies',
+          description: `These are my main Back-End Skills.`,
           tools: [
             {
               id: uuidv4(),

@@ -42,7 +42,6 @@ a {
 // COLORS
 
 .primary-color {
-  color: $light-green;
+  color: #40b883;
 }
-
 </style>
