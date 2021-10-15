@@ -16,6 +16,11 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.5.1.min.js",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -60,7 +65,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
 
-  modules: ['@nuxtjs/google-analytics'],
+  modules: [
+    '@nuxtjs/gtm',
+  ],
+  gtm: {
+    id: 'GTM-WQCJB4Z'
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
