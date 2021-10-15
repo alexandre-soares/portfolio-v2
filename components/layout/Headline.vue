@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="headline">
     <span
       class="comments grey--text text--lighten-1 text-uppercase text-subtitle-1"
     >
       /* {{ comment }} */
     </span>
-    <h2 class="text-h2 my-5 primary-color">
+    <h2 class="text-h3 my-3 font-weight-medium primary-color">
       {{ title }}
     </h2>
     <p class="text-body-1 subinfo mt-4">
@@ -31,7 +31,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.subinfo {
-  width: 50% !important;
+.headline {
+  @media only screen and (max-width: 1100px) {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  & .subinfo {
+    width: 50% !important;
+
+    @media only screen and (max-width: 1100px) {
+      width: 100% !important;
+    }
+  }
 }
 </style>

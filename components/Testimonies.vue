@@ -84,6 +84,10 @@ export default {
     width: 15%;
     border-radius: 50%;
     margin-right: 2rem;
+
+    @media only screen and (max-width: 900px) {
+      width: 25%;
+    }
   }
   & p {
     width: 60%;

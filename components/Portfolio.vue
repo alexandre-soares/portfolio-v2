@@ -6,6 +6,7 @@
       :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
     />
 
+    <!--
     <v-row justify="end">
       <v-tooltip top>
         <template #activator="{ on, attrs }">
@@ -14,7 +15,7 @@
             v-bind="attrs"
             v-on="on"
             @click="displayGrid = true"
-            class="mx-4"
+            class="ma-4"
           >
             mdi-view-grid
           </v-icon>
@@ -36,7 +37,7 @@
         <span>List</span>
       </v-tooltip>
     </v-row>
-
+-->
     <v-row v-if="displayGrid">
       <v-card
         class="mx-auto my-5 card"
@@ -45,12 +46,28 @@
         :key="project.id"
         cols="4"
       >
-        <v-img height="190" :src="project.thumbnail"></v-img>
+        <a :href="project.website" target="_blank">
+          <v-img height="190" :src="project.thumbnail"></v-img>
+        </a>
 
-        <v-card-title>{{ project.name }}</v-card-title>
+        <v-card-title class="d-flex align-center justify-space-between">
+          {{ project.name }}
+          <div>
+            <v-tooltip top v-if="project.github != '-'">
+              <template #activator="{ on, attrs }">
+                <a class="mx-1" :href="project.github" target="_blank">
+                  <v-icon color="grey lighten-1" v-bind="attrs" v-on="on" large>
+                    mdi-github
+                  </v-icon>
+                </a>
+              </template>
+              <span>Github</span>
+            </v-tooltip>
+          </div>
+        </v-card-title>
 
         <v-card-text>
-          <div class="my-1 text-subtitle-1">Type: {{ project.type }}</div>
+          <div class="my-1 text-subtitle-1">{{ project.type }}</div>
 
           <div>
             {{ project.description }}
@@ -58,10 +75,6 @@
         </v-card-text>
 
         <v-divider class="mx-4"></v-divider>
-
-        <v-card-title class="text-subtitle-1 py-2"
-          >Used Technologies</v-card-title
-        >
 
         <v-card-text class="pb-1">
           <v-chip-group
@@ -79,41 +92,11 @@
           </v-chip-group>
         </v-card-text>
 
-        <v-card-actions class="d-flex justify-center">
-          <v-tooltip top>
-            <template #activator="{ on, attrs }">
-              <a class="mx-4" :href="project.website" target="_blank">
-                <v-icon
-                  color="grey lighten-1 mx-4"
-                  v-bind="attrs"
-                  v-on="on"
-                  large
-                >
-                  mdi-web
-                </v-icon>
-              </a>
-            </template>
-            <span>Website</span>
-          </v-tooltip>
-          <v-tooltip top v-if="project.github != '-'">
-            <template #activator="{ on, attrs }">
-              <a class="mx-4" :href="project.github" target="_blank">
-                <v-icon
-                  color="grey lighten-1 mx-4"
-                  v-bind="attrs"
-                  v-on="on"
-                  large
-                >
-                  mdi-github
-                </v-icon>
-              </a>
-            </template>
-            <span>Github</span>
-          </v-tooltip>
-        </v-card-actions>
+        <v-card-actions class="d-flex justify-center"> </v-card-actions>
       </v-card>
     </v-row>
 
+    <!--
     <v-row v-if="!displayGrid" class="flex-column ma-0">
       <v-data-table
         :headers="headers"
@@ -133,7 +116,17 @@
       >
         <span>Show More</span>
       </v-btn>
+      <v-btn
+        color="success darken-2 ma-4"
+        elevation="3"
+        v-else
+        @click=";(numbersProjects = 3), (showMore = false)"
+      >
+        <span>Show Less</span>
+      </v-btn>
+
     </v-row>
+      -->
   </v-container>
 </template>
 

@@ -44,8 +44,7 @@
               class="text-center"
               v-for="tool in service.tools"
               :key="tool.id"
-              cols="12"
-              sm="2"
+              md="2"
             >
               <v-tooltip top>
                 <template #activator="{ on, attrs }">
@@ -71,6 +70,7 @@ export default {
   name: 'AboutMe',
   data() {
     return {
+      isActive: false,
       hoveredComment: true,
       services: [
         // Front End Skills
@@ -84,18 +84,6 @@ export default {
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
           tools: [
-            {
-              id: uuidv4(),
-              name: 'HTML',
-              iconName: 'mdi-language-html5',
-              color: 'html',
-            },
-            {
-              id: uuidv4(),
-              name: 'CSS',
-              iconName: 'mdi-language-css3',
-              color: 'css',
-            },
             {
               id: uuidv4(),
               name: 'Javascript',
@@ -195,6 +183,12 @@ export default {
               iconName: 'mdi-microsoft-visual-studio',
               color: 'vscode',
             },
+            {
+              id: uuidv4(),
+              name: 'Git',
+              iconName: 'mdi-git',
+              color: 'git',
+            },
           ],
         },
       ],
@@ -207,14 +201,23 @@ export default {
 .about {
   position: relative;
   height: 100vh;
+
+  @media only screen and (max-width: 1100px) {
+    height: auto;
+  }
 }
 
 .card {
   position: absolute;
+
+  @media only screen and (max-width: 1100px) {
+    position: relative;
+    left: auto !important;
+    bottom: auto !important;
+  }
 }
 
 .v-icon {
   cursor: pointer;
 }
-
 </style>

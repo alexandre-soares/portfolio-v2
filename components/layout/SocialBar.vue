@@ -21,14 +21,6 @@
       </v-tooltip>
       <v-tooltip right>
         <template #activator="{ on, attrs }">
-          <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
-            mdi-instagram
-          </v-icon>
-        </template>
-        <span>Follow me on Instagram</span>
-      </v-tooltip>
-      <v-tooltip right>
-        <template #activator="{ on, attrs }">
           <a href="https://github.com/alexandre-soares" target="_blank">
             <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
               mdi-github
@@ -55,9 +47,13 @@ export default {}
 
   position: fixed;
   bottom: 0;
-  left: 40px;
+  left: 20px;
 
   z-index: 9999;
+
+  @media only screen and (max-width: 1100px) {
+    left: 10px;
+  }
 }
 
 .contact-icons {

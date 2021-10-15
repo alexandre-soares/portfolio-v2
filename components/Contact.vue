@@ -9,7 +9,7 @@
     </v-container>
 
     <v-row no-gutters align="baseline">
-      <v-col cols="5" class="contact__informations">
+      <v-col md="12" lg="5" xl="5" class="contact__informations">
         <div>
           <h3>Contact Information</h3>
           <p>Fill up the form and I will contact you within 24 hours.</p>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="7" class="contact__form">
+      <v-col md="12" lg="7" xl="7" class="contact__form">
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form ref="form" class="contact__form" @submit.prevent="submit">
             <validation-provider
@@ -187,7 +187,7 @@ export default {
   components: {
     ValidationProvider,
     ValidationObserver,
-    Headline
+    Headline,
   },
   data() {
     return {
@@ -245,6 +245,10 @@ export default {
     justify-content: space-around;
     & div {
       padding: 30px !important;
+      @media only screen and (max-width: 1100px) {
+        padding: 10px !important;
+      }
+
       & p {
         margin: 20px 0;
       }

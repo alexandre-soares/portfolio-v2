@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <Hero />
-    <About-me />
+    <About-me id="about" />
     <Portfolio />
     <Testimonies />
-    <Contact />
+    <Contact id="contact" />
   </div>
 </template>
 
@@ -21,14 +21,20 @@ export default {
     AboutMe,
     Portfolio,
     Testimonies,
-    Contact
+    Contact,
   },
 }
 </script>
 
 <style>
 .home {
+  position: relative;
   z-index: 2;
   backdrop-filter: blur(2rem);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
 }
 </style>

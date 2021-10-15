@@ -20,6 +20,20 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
+  // router
+  router: {
+    scrollBehavior(to) {
+      if (to.hash) {
+        return {
+          selector: to.hash,
+          behavior: 'smooth',
+        }
+      } else {
+        return { x: 0, y: 0, behavior: 'smooth' }
+      }
+    },
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -65,6 +79,7 @@ export default {
           jira: '#237CF2',
           vscode: '#025FA1',
           firebase: '#F2C228',
+          git: '#E44C31',
         },
       },
     },
