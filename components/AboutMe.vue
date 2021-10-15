@@ -4,7 +4,7 @@
 
     <p class="text-subtitle-1">CORE SKILLS:</p>
 
-    <v-row justify="space-between">
+    <v-row justify="center">
       <v-chip color="success darken-2 font-weight-medium my-2" label outlined
         >Front End Frameworks</v-chip
       >

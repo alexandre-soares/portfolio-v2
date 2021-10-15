@@ -262,6 +262,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    @media only screen and (max-width: 900px) {
+      height: auto;
+      padding: 50px 5px !important;
+    }
+
     & div {
       padding: 30px !important;
       @media only screen and (max-width: 1100px) {

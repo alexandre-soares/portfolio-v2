@@ -262,6 +262,10 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  @media only screen and (max-width: 900px) {
+    max-width: 350px !important;
+  }
+
   &--hover {
     height: 100%;
     display: flex;

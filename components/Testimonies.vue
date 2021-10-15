@@ -79,6 +79,10 @@ export default {
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+
   & img {
     object-fit: cover;
     width: 15%;
@@ -86,12 +90,16 @@ export default {
     margin-right: 2rem;
 
     @media only screen and (max-width: 900px) {
-      width: 25%;
+      width: 50%;
+      margin-bottom: 10px;
     }
   }
   & p {
     width: 60%;
     text-align: justify;
+    @media only screen and (max-width: 900px) {
+      width: 90%;
+    }
   }
   & span {
     display: inline-block;
@@ -102,6 +110,9 @@ export default {
 .groucho {
   position: relative;
   width: 60%;
+  @media only screen and (max-width: 900px) {
+    width: 90%;
+  }
   footer {
     font-family: 'Noto Sans', sans-serif;
     float: right;
@@ -122,7 +133,7 @@ export default {
 a footer {
   transition: all 0.3s ease-in;
   &:hover {
-    color: #40B883;
+    color: #40b883;
   }
 }
 </style>

@@ -46,6 +46,14 @@ export default {}
     margin: 0 auto;
     text-align: center;
     display: block;
+
+
+
+  @media only screen and (max-width: 1100px) {
+   height: 250px;
+    width: 250px;
+  }
+
   }
 }
 
