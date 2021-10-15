@@ -95,9 +95,7 @@ export default {
           id: uuidv4(),
           iconUrl: '/img/about-me/ux.png',
           name: 'Frond End Technologies',
-          description: `I'm a thing. But, like most politicians, he promised more than
-                he could deliver. You won't have time for sleeping, soldier, not
-                with all the bed making you'll be doing.`,
+          description: `These are my main Front-End Skills.`,
           tools: [
             {
               id: uuidv4(),
@@ -141,7 +139,7 @@ export default {
         {
           id: uuidv4(),
           iconUrl: '/img/about-me/backend.png',
-          name: 'Back End Technologies',
+          name: 'These are my main Front-End Skills.',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
@@ -165,9 +163,7 @@ export default {
           id: uuidv4(),
           iconUrl: '/img/about-me/tool-box.png',
           name: 'Tools / Apis',
-          description: `I'm a thing. But, like most politicians, he promised more than
-                he could deliver. You won't have time for sleeping, soldier, not
-                with all the bed making you'll be doing.`,
+          description: `These are my main tools for developing websites.`,
           tools: [
             {
               id: uuidv4(),

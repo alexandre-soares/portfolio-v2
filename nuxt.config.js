@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
@@ -53,8 +54,8 @@ export default {
   googleAnalytics: {
     id: 'UA-128199176-1',
     autoTracking: {
-      screenview: true
-    }
+      screenview: true,
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
