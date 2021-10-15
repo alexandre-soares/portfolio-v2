@@ -7,10 +7,10 @@
         </h1>
         <h2 class="text-h3 my-4">VueJS Web Developer</h2>
         <p class="text-body-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus
-          facere, perspiciatis excepturi velit dicta sint minima consequuntur
-          nam dolore saepe corporis tempora nisi aliquid recusandae,
-          necessitatibus eos expedita doloremque.
+          With solid <strong>work ethic</strong> and
+          <strong>new technologies</strong>, I'm determined to produce quality
+          products <strong>under deadline pressure.</strong> I smoothly manage
+          projects from <strong>concept to completion.</strong>
         </p>
         <nuxt-link :to="{ path: '/', hash: '#about' }">
           <v-btn color="success darken-2" elevation="3">Learn more</v-btn>

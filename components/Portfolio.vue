@@ -2,8 +2,8 @@
   <v-container class="portfolio">
     <Headline
       :comment="'Portfolio'"
-      :title="'My Awesome Creations'"
-      :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
+      :title="'What did I already developed?'"
+      :description="' '"
     />
 
     <!--
@@ -106,6 +106,7 @@
       >
       </v-data-table>
     </v-row>
+      -->
 
     <v-row justify="end" v-if="displayGrid">
       <v-btn
@@ -124,9 +125,7 @@
       >
         <span>Show Less</span>
       </v-btn>
-
     </v-row>
-      -->
   </v-container>
 </template>
 

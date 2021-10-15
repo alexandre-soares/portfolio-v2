@@ -1,10 +1,19 @@
 <template>
   <v-container class="about mb-8">
-    <Headline
-      :comment="'About Me'"
-      :title="'My Awesome Services'"
-      :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
-    />
+    <Headline :comment="'About Me'" :title="'What am I doing?'" />
+
+    <p class="text-subtitle-1">CORE SKILLS:</p>
+    <ul>
+      <li class="text-body-1">Front End Frameworks</li>
+      <li class="text-body-1">CSS Preprocessors</li>
+      <li class="text-body-1">RESTful Services/APIs</li>
+      <li class="text-body-1">Responsive/Mobile Design</li>
+      <li class="text-body-1">Cross-Browser Development</li>
+      <li class="text-body-1">Content Management Systems</li>
+      <li class="text-body-1">Testing/Debugging</li>
+      <li class="text-body-1">Git/Version Control</li>
+      <li class="text-body-1">Problem Solving</li>
+    </ul>
 
     <v-row class="my-4">
       <v-card
@@ -76,10 +85,8 @@ export default {
         // Front End Skills
         {
           id: uuidv4(),
-          bottom: 50,
-          left: 60,
           iconUrl: '/img/about-me/ux.png',
-          name: 'Frond End Skills',
+          name: 'Frond End Technologies',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
@@ -125,11 +132,8 @@ export default {
         // Back End Skills
         {
           id: uuidv4(),
-          bottom: -50,
-          left: 600,
           iconUrl: '/img/about-me/backend.png',
-          name: 'Back End Skills',
-          toggleName: 'showBackSkills',
+          name: 'Back End Technologies',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
@@ -154,7 +158,7 @@ export default {
           bottom: 300,
           left: 700,
           iconUrl: '/img/about-me/tool-box.png',
-          name: 'Tools',
+          name: 'Tools / Apis',
           description: `I'm a thing. But, like most politicians, he promised more than
                 he could deliver. You won't have time for sleeping, soldier, not
                 with all the bed making you'll be doing.`,
@@ -164,12 +168,6 @@ export default {
               name: 'Docker',
               iconName: 'mdi-docker',
               color: 'docker',
-            },
-            {
-              id: uuidv4(),
-              name: 'GraphQL',
-              iconName: 'mdi-graphql',
-              color: 'graphql',
             },
             {
               id: uuidv4(),
@@ -189,6 +187,12 @@ export default {
               iconName: 'mdi-git',
               color: 'git',
             },
+            {
+              id: uuidv4(),
+              name: 'GraphQL',
+              iconName: 'mdi-graphql',
+              color: 'graphql',
+            },
           ],
         },
       ],
@@ -207,7 +211,7 @@ export default {
   }
 }
 
-.card {
+.card:nth-child(3) {
   position: absolute;
 
   @media only screen and (max-width: 1100px) {

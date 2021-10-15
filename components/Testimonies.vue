@@ -3,7 +3,7 @@
     <Headline
       :comment="'Testimonies'"
       :title="'They worked with me'"
-      :description="'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit deleniti molestias natus delectus beatae sequi exercitationem tempora quam amet tenetur vero fugiat incidunt sed, obcaecati nesciunt unde libero porro?'"
+      :description="'Mutual respect among coworkers leads to better solutions in the workplace as each member of a team values the input and ideas of the others. Trust. Trust is the foundation of any healthy relationship. Trust among coworkers forms a powerful bond that facilitates communication and working together.'"
     />
 
     <v-container>

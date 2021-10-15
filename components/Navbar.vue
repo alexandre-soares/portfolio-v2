@@ -1,7 +1,9 @@
 <template>
   <nav>
     <v-toolbar flat>
-      <v-toolbar-title>Alexandre SOARES</v-toolbar-title>
+      <nuxt-link :to="{ path: '/' }">
+        <v-toolbar-title class="success--text text--darken-2">Alexandre SOARES</v-toolbar-title>
+      </nuxt-link>
       <v-spacer></v-spacer>
       <nuxt-link :to="{ path: '/', hash: '#contact' }">
         <v-btn color="success darken-2" elevation="3">

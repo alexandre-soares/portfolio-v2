@@ -3,9 +3,21 @@
     <div class="contact-icons">
       <v-tooltip right>
         <template #activator="{ on, attrs }">
-          <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
-            mdi-email
-          </v-icon>
+          <a target="_blank" href="/CV Alexandre SOARES 2021.pdf">
+            <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
+              mdi-download
+            </v-icon>
+          </a>
+        </template>
+        <span>Download my resume</span>
+      </v-tooltip>
+      <v-tooltip right>
+        <template #activator="{ on, attrs }">
+          <nuxt-link :to="{ path: '/', hash: '#contact' }">
+            <v-icon color="success darken-2" dark v-bind="attrs" v-on="on">
+              mdi-email
+            </v-icon>
+          </nuxt-link>
         </template>
         <span>Contact me</span>
       </v-tooltip>
