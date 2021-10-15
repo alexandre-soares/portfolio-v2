@@ -45,7 +45,7 @@
                 name="name"
                 :counter="30"
                 :error-messages="errors"
-                label="Name"
+                label="Name *"
                 required
                 color="success darken-2"
               ></v-text-field>
@@ -55,7 +55,7 @@
               v-slot="{ errors }"
               name="Phone Number"
               :rules="{
-                required: true,
+                required: false,
                 regex: '^([0-9]+)$',
               }"
             >
@@ -64,7 +64,6 @@
                 :error-messages="errors"
                 name="contact_number"
                 label="Phone Number"
-                required
                 color="success darken-2"
               ></v-text-field>
             </validation-provider>
@@ -78,7 +77,7 @@
                 v-model="user_email"
                 :error-messages="errors"
                 name="email"
-                label="E-mail"
+                label="E-mail *"
                 required
                 color="success darken-2"
               ></v-text-field>
@@ -94,7 +93,7 @@
                 :min="10"
                 :error-messages="errors"
                 name="message"
-                label="Message"
+                label="Message *"
                 required
                 color="success darken-2"
               ></v-textarea>
@@ -105,7 +104,7 @@
               class="mr-4 mt-4"
               type="submit"
               :disabled="invalid"
-              :class="{ 'button--loading': loadingButton }"
+              :loading="loading"
             >
               Send message
             </v-btn>
@@ -118,7 +117,7 @@
           outlined
           text
           type="success darken-2"
-          width="500"
+          width="700"
           class="mx-auto"
           >Thank you! You <strong>successfully</strong> sent your message! I'll
           get back to you <strong>within 24 hours.</strong></v-alert
@@ -196,13 +195,34 @@ export default {
       user_email: '',
       message: '',
       isEmailSent: null,
-      loadingButton: null,
+      loader: null,
+      loading: false,
     }
+  },
+  watch: {
+    loader() {
+      const l = this.loader
+      this[l] = !this[l]
+
+      setTimeout(() => (this[l] = false), 4000)
+
+      this.loader = null
+    },
+    isEmailSent() {
+      setTimeout(() => (this.isEmailSent = null), 4000)
+    },
   },
   methods: {
     submit() {
       this.$refs.observer.validate()
-      this.loadingButton = true
+
+      // LOADING BUTTON
+
+      this.loader = 'loading'
+
+      this[this.loader] = !this[this.loader]
+      this[this.loader] = false
+
       emailjs
         .sendForm(
           'service_wjep9cc',
@@ -213,13 +233,12 @@ export default {
         .then(
           (result) => {
             console.log('SUCCESS!', result.text)
-            this.loadingButton = false
-            this.isEmailSent = true
+
+            setTimeout(() => (this.isEmailSent = true), 2000)
           },
           (error) => {
             console.log('FAILED...', error.text)
-            this.loadingButton = false
-            this.isEmailSent = false
+            setTimeout(() => (this.isEmailSent = false), 2000)
           }
         )
     },

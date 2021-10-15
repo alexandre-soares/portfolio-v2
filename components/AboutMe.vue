@@ -3,28 +3,36 @@
     <Headline :comment="'About Me'" :title="'What am I doing?'" />
 
     <p class="text-subtitle-1">CORE SKILLS:</p>
-    <ul>
-      <li class="text-body-1">Front End Frameworks</li>
-      <li class="text-body-1">CSS Preprocessors</li>
-      <li class="text-body-1">RESTful Services/APIs</li>
-      <li class="text-body-1">Responsive/Mobile Design</li>
-      <li class="text-body-1">Cross-Browser Development</li>
-      <li class="text-body-1">Content Management Systems</li>
-      <li class="text-body-1">Testing/Debugging</li>
-      <li class="text-body-1">Git/Version Control</li>
-      <li class="text-body-1">Problem Solving</li>
-    </ul>
 
-    <v-row class="my-4">
+    <v-row justify="space-between">
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >Front End Frameworks</v-chip
+      >
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined>CSS Preprocessors</v-chip>
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >RESTful Services/APIs</v-chip
+      >
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >Responsive/Mobile Design</v-chip
+      >
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >Cross-Browser Development</v-chip
+      >
+      <v-chip color="success darken-2 font-weight-medium my-2" label outlined
+        >Git/Version Control</v-chip
+      >
+      <v-chip color="success darken-2 my-2" label outlined>Problem Solving</v-chip>
+    </v-row>
+
+    <v-row>
       <v-card
-        class="mx-auto my-12 pa-3 card"
-        min-width="300"
-        max-width="400"
+        class="mx-auto my-6 py-10 px-5 card rounded-lg"
+        max-width="350"
         v-for="service in services"
         :key="service.id"
+        elevation="10"
         cols="12"
         sm="4"
-        :style="{ bottom: service.bottom + 'px', left: service.left + 'px' }"
       >
         <div class="card__header">
           <img
@@ -40,7 +48,7 @@
 
           <v-spacer></v-spacer>
 
-          <p class="text-body-2 text-justify my-4">
+          <p class="text-body-2 text-justify ma-4">
             {{ service.description }}
           </p>
         </div>
@@ -155,8 +163,6 @@ export default {
         // Other - Personality
         {
           id: uuidv4(),
-          bottom: 300,
-          left: 700,
           iconUrl: '/img/about-me/tool-box.png',
           name: 'Tools / Apis',
           description: `I'm a thing. But, like most politicians, he promised more than
@@ -202,25 +208,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.about {
-  position: relative;
-  height: 100vh;
-
-  @media only screen and (max-width: 1100px) {
-    height: auto;
-  }
-}
-
-.card:nth-child(3) {
-  position: absolute;
-
-  @media only screen and (max-width: 1100px) {
-    position: relative;
-    left: auto !important;
-    bottom: auto !important;
-  }
-}
-
 .v-icon {
   cursor: pointer;
 }

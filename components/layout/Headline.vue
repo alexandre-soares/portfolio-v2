@@ -5,10 +5,10 @@
     >
       /* {{ comment }} */
     </span>
-    <h2 class="text-h3 my-3 font-weight-medium primary-color">
+    <h2 class="text-h3 my-6 font-weight-medium primary-color">
       {{ title }}
     </h2>
-    <p class="text-body-1 subinfo mt-4">
+    <p class="text-body-1 subinfo">
       {{ description }}
     </p>
   </div>

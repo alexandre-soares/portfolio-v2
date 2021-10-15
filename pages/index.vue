@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <Hero />
-    <About-me id="about" />
-    <Portfolio />
-    <Testimonies />
+    <About-me class="my-4" id="about" />
+    <Portfolio class="my-4" />
+    <Testimonies class="my-4" />
     <Contact id="contact" />
   </div>
 </template>

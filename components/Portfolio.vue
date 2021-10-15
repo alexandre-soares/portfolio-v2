@@ -46,10 +46,26 @@
         :key="project.id"
         cols="4"
       >
-        <a :href="project.website" target="_blank">
-          <v-img height="190" :src="project.thumbnail"></v-img>
-        </a>
-
+        <v-hover v-slot="{ hover }">
+          <a :href="project.website" target="_blank">
+            <v-img height="190" :src="project.thumbnail">
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="
+                    card--hover
+                    transition-fast-in-fast-out
+                    v-card--reveal
+                    text-subtitle-1
+                    white--text
+                  "
+                >
+                  Check the website
+                </div>
+              </v-expand-transition>
+            </v-img>
+          </a>
+        </v-hover>
         <v-card-title class="d-flex align-center justify-space-between">
           {{ project.name }}
           <div>
@@ -243,4 +259,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  &--hover {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7);
+  }
+}
+</style>
