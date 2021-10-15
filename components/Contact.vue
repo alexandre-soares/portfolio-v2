@@ -255,7 +255,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   &__informations {
-    background-color: $dark-green;
+    background-color: #202b38;
     color: white;
     height: 100vh;
     padding: 20px 30px;
@@ -281,11 +281,11 @@ export default {
     & textarea {
       width: 100%;
       margin-top: 2rem;
-      border-bottom: 1px solid $light-green;
+      border-bottom: 1px solid #40b883;
       font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
       &:focus {
         outline: none;
-        border-bottom: 1px solid $dark-green;
+        border-bottom: 1px solid #202b38;
       }
     }
   }

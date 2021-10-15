@@ -122,7 +122,7 @@ export default {
 a footer {
   transition: all 0.3s ease-in;
   &:hover {
-    color: $light-green;
+    color: #40B883;
   }
 }
 </style>

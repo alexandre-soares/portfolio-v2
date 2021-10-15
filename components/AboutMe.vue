@@ -99,7 +99,7 @@ export default {
           id: uuidv4(),
           iconUrl: '/img/about-me/ux.png',
           name: 'Frond End Technologies',
-          description: `These are my main Front-End Skills.`,
+          description: `These are my main Front-End Skills that I use to build websites.`,
           tools: [
             {
               id: uuidv4(),
@@ -144,7 +144,7 @@ export default {
           id: uuidv4(),
           iconUrl: '/img/about-me/backend.png',
           name: 'Back End Technologies',
-          description: `These are my main Back-End Skills.`,
+          description: `These are my main Back-End Skills that I use to build websites.`,
           tools: [
             {
               id: uuidv4(),
